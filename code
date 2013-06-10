@@ -9,7 +9,7 @@
 </div>
 <p><span style="color: #E41B17;"><strong>Preparation for solving:</strong></span> We must first parameterize the surface S with 2 parameters and then find the intervals.</p>
 <div style="color: #810541;">
-<p><strong>Work particular to the given problem:</strong>&nbsp;</p>
+<p><strong>Work for our given problem:</strong>&nbsp;</p>
 <div style="margin-left: 20px;">
 <p>== Because we want surface area, our function of integration is $f(x,y,z)=1$</p>
 <p>== We have an explicit function for the surface $z=1-x-y$. So we just let $x=u$, $y=v$ and substitue into z: $z=1-u-v$. $D_{uv}=D_{xy}$, i.e. the projection of the triangle onto the u0v = x0y plane. &nbsp;</p>
@@ -17,7 +17,7 @@
 <p><span style="color: #333333; font-size: .9em;">To get the intervals: We find the vertices of the triangle in the u0v = x0y plane. In this plane z=0. The vertices of the triangle in 3d are the intersection points of the plane with the postive x, y and z axes (we are given $x, \, y,\, z \ge 0$). So they are (1,0,0), (0,1,0) and (0,0,1). In the u0v plane, we have: &nbsp;V1(u=1,v=0), V2(u=0,v=1) and V3(u=0,v=0). We draw this region. It is a triangle where u goes from 0 to 1 and v goes from 0 to the line joining V1 and V2. The equation of this line is v=-u+1.&nbsp;</span></p>
 </div>
 <hr />
-<p><strong>SOLVER:</strong> Our program follows the hand solution method. <span style="color: #810541;">Everything in purple requires something particular to the problem you are doing.</span></p>
+<p><strong>SOLVER:</strong> Our program follows the hand solution method which is just the steps we use by hand to solve this equation. <span style="color: #810541;">Everything in purple requires something particular to the problem you are doing.</span></p>
 <ol>
 <li>Parameterize S and input it as a vector function. <span style="color: #810541;">Requires parametrization which has been done above.</span></li>
 <li>Input your f(x,y,z).</li>
@@ -25,7 +25,7 @@
 <li>Find the vector product of those partials and find the magnitude (intensity) of this vector.</li>
 <li>Substitute parameterization in for f.</li>
 <li>Find the integrand.</li>
-<li>Find intervals of integration and integrate.&nbsp;<span style="color: 810541;">Requires intervals of parametrization which was done above.</span></li>
+<li>Find intervals of integration and integrate.&nbsp;<span style="color: 810541;">Requires intervals of parameterization which was done above.</span></li>
 </ol></div>
 
 {{{id=24|
