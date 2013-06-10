@@ -1,5 +1,5 @@
 <p style="font-size: 1.1em; color: #4E8975;">Calculate the surface integral (of function type) $\iint_S f(x,y,z)\, dS $ where $S$ is a surface.</p>
-<p style="color: ##728C00;">As an example, we will solve the simple problem: <span style="color: #008080;">Calculate the surface area of the triangle x+y+z=1, $x,\,y,\,z \ge 0$</span>.</p>
+<p style="color: ##728C00;">As an example, we will solve the sample problem: <span style="color: #008080;">Calculate the surface area of the triangle x+y+z=1, $x,\,y,\,z \ge 0$</span>.</p>
 <hr />
 <p><a href="http://www.scribd.com/doc/77158858/3d-Integral-Formulas-Small-Eu">Formula She</a><a href="http://www.scribd.com/doc/77158858/3d-Integral-Formulas-Small-Eu">et</a> From the formula sheet, we can find:<span style="color: #54C571;"> &nbsp;$\iint_S f(x,y,z)\, dS $</span></p>
 <div style="margin-left: 20px;">
@@ -7,7 +7,7 @@
 <p><span style="color: #E56717;">The surface element is the magnitude(intensity) of the vector product:</span> &nbsp;$dS =\left\| {d{{\vec S}_u} \times d{{\vec S}_v}} \right\| \,\, du \, dv$</p>
 <p><span style="color: #ff0099;">Integrand is the <em>dot</em>&nbsp;product:</span> $\iint_S f(x,y,z)\, dS= \iint_{D_{uv}}\, f(x(u,v),y(u,v),z(u,v)) \cdot \left\| {d{{\vec S}_u} \times d{{\vec S}_v}} \right\| \,\, du\, dv$</p>
 </div>
-<p><span style="color: #E41B17;"><strong>Preparation for solver:</strong></span> We must first parameterize the surface S with 2 parameters and then find the intervals.</p>
+<p><span style="color: #E41B17;"><strong>Preparation for solving:</strong></span> We must first parameterize the surface S with 2 parameters and then find the intervals.</p>
 <div style="color: #810541;">
 <p><strong>Work particular to the given problem:</strong>&nbsp;</p>
 <div style="margin-left: 20px;">
@@ -126,8 +126,8 @@ n(result)
 
 <hr /><hr />
 <p style="font-size: 1.1em; color: #008000;"><strong>Answer:</strong> The surface area of the triangle with vertices (1,0,0), (0,1,0) and (0,0,1) is: $<span>\frac{\sqrt{3}}{2} \approx 0.87$ &nbsp;</span></p>
-<p style="margin-left: 20px; color: #993333;">The triangle is an equilateral triangle with side length $a=\sqrt{2}$ so it has area $A=\frac{\sqrt{3}}{4} \cdot a^2=\frac{\sqrt{3}}{2}$</p>
-<p style="margin-left: 20px; color: #993333;">So we expect the surface area will be $\iint_S\,{f(x,y,z)}\,dS=\iint_S{1}dS =1 \cdot \text{Area of Triangle}=\frac{\sqrt{3}}{2}$</p>
+<p style="margin-left: 20px; color: #993333;">The triangle itself is an equilateral triangle with side length $a=\sqrt{2}$ so with area $A=\frac{\sqrt{3}}{4} \cdot a^2=\frac{\sqrt{3}}{2}$</p>
+<p style="margin-left: 20px; color: #993333;">So we expect the surface area to be $\iint_S\,{f(x,y,z)}\,dS=\iint_S{1}dS =1 \cdot \text{Area of Triangle}=\frac{\sqrt{3}}{2}$</p>
 
 {{{id=25|
 
