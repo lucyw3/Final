@@ -1,0 +1,135 @@
+<p style="font-size: 1.1em; color: #4E8975;">Calculate the surface integral (of function type) $\iint_S f(x,y,z)\, dS $ where $S$ is a surface.</p>
+<p style="color: ##728C00;">As an example, we will solve the simple problem: <span style="color: #008080;">Calculate the surface area of the triangle x+y+z=1, $x,\,y,\,z \ge 0$</span>.</p>
+<hr />
+<p><a href="http://www.scribd.com/doc/77158858/3d-Integral-Formulas-Small-Eu">Formula She</a><a href="http://www.scribd.com/doc/77158858/3d-Integral-Formulas-Small-Eu">et</a> From the formula sheet, we can find:<span style="color: #54C571;"> &nbsp;$\iint_S f(x,y,z)\, dS $</span></p>
+<div style="margin-left: 20px;">
+<p><span style="color: #E67451;">Let the surface S be parameterized by S=(x(u,v),y(u,v),z(u,v)).&nbsp;</span></p>
+<p><span style="color: #E56717;">The surface element is the magnitude(intensity) of the vector product:</span> &nbsp;$dS =\left\| {d{{\vec S}_u} \times d{{\vec S}_v}} \right\| \,\, du \, dv$</p>
+<p><span style="color: #ff0099;">Integrand is the <em>dot</em>&nbsp;product:</span> $\iint_S f(x,y,z)\, dS= \iint_{D_{uv}}\, f(x(u,v),y(u,v),z(u,v)) \cdot \left\| {d{{\vec S}_u} \times d{{\vec S}_v}} \right\| \,\, du\, dv$</p>
+</div>
+<p><span style="color: #E41B17;"><strong>Preparation for solver:</strong></span> We must first parameterize the surface S with 2 parameters and then find the intervals.</p>
+<div style="color: #810541;">
+<p><strong>Work particular to the given problem:</strong>&nbsp;</p>
+<div style="margin-left: 20px;">
+<p>== Because we want surface area, our function of integration is $f(x,y,z)=1$</p>
+<p>== We have an explicit function for the surface $z=1-x-y$. So we just let $x=u$, $y=v$ and substitue into z: $z=1-u-v$. $D_{uv}=D_{xy}$, i.e. the projection of the triangle onto the u0v = x0y plane. &nbsp;</p>
+<p>== <span style="color: #003399;">So: $S =$ $\left\{ \begin{array}{l}x = u \\y = v\\z =1-u-v&nbsp;\end{array} \right.\,\,\,\,\,u&nbsp;\in [0,1 ] \,\,\,\,v \in [0,-u+1]$</span></p>
+<p><span style="color: #333333; font-size: .9em;">To get the intervals: We find the vertices of the triangle in the u0v = x0y plane. In this plane z=0. The vertices of the triangle in 3d are the intersection points of the plane with the postive x, y and z axes (we are given $x, \, y,\, z \ge 0$). So they are (1,0,0), (0,1,0) and (0,0,1). In the u0v plane, we have: &nbsp;V1(u=1,v=0), V2(u=0,v=1) and V3(u=0,v=0). We draw this region. It is a triangle where u goes from 0 to 1 and v goes from 0 to the line joining V1 and V2. The equation of this line is v=-u+1.&nbsp;</span></p>
+</div>
+<hr />
+<p><strong>SOLVER:</strong> Our program follows the hand solution method. <span style="color: #810541;">Everything in purple requires something particular to the problem you are doing.</span></p>
+<ol>
+<li>Parameterize S and input it as a vector function. <span style="color: #810541;">Requires parametrization which has been done above.</span></li>
+<li>Input your f(x,y,z).</li>
+<li>Find the partial derivatives of S.&nbsp;</li>
+<li>Find the vector product of those partials and find the magnitude (intensity) of this vector.</li>
+<li>Substitute parameterization in for f.</li>
+<li>Find the integrand.</li>
+<li>Find intervals of integration and integrate.&nbsp;<span style="color: 810541;">Requires intervals of parametrization which was done above.</span></li>
+</ol></div>
+
+{{{id=24|
+var ('u v'); var('x y z')
+///
+(u, v)
+(x, y, z)
+}}}
+
+<hr />
+<p><strong>Step 1:</strong> We define $\vec S$, and $f(x,y,z)$. <span style="color: #810541; font-weight: bold; font-size: .9em;"><span style="color: #810541; font-size: 14px; font-weight: bold;">This changes with each problem; you must input your parametrization in Sf and your function of f.</span></span></p>
+
+{{{id=11|
+Sf=vector((u,v,1-u-v))
+f=1
+///
+}}}
+
+<hr />
+<p><strong>Step 2: </strong>The program will find the partial derivatives.</p>
+
+{{{id=12|
+Sprime_u=diff(Sf,u)
+view(Sprime_u)
+///
+<html><span class="math">\newcommand{\Bold}[1]{\mathbf{#1}}\left(1,\,0,\,-1\right)</span></html>
+}}}
+
+{{{id=13|
+Sprime_v=diff(Sf,v)
+view(Sprime_v)
+///
+<html><span class="math">\newcommand{\Bold}[1]{\mathbf{#1}}\left(0,\,1,\,-1\right)</span></html>
+}}}
+
+<hr />
+<p><strong>Step 3:</strong> The program calculates $\left\| {d{{\vec S}_u} \times d{{\vec S}_v}} \right\|$</p>
+
+{{{id=18|
+npar=Sprime_u.cross_product(Sprime_v)
+np=norm(npar)
+view(np)
+///
+<html><span class="math">\newcommand{\Bold}[1]{\mathbf{#1}}\sqrt{3}</span></html>
+}}}
+
+<hr />
+<p><strong>Step 4: </strong>The program defines a sage function for change of variables for a 2-variable parametrization.</p>
+<p>This program changes the variables of $f$.</p>
+
+{{{id=10|
+def changevar(h, eqn, newvar1,newvar2):
+    return h.substitute(eqn)
+///
+}}}
+
+{{{id=6|
+f=changevar(f,x==Sf[0],u,v)
+f=changevar(f,y==Sf[1],u,v)
+f=changevar(f,z==Sf[2],u,v)
+view(f)
+///
+<html><span class="math">\newcommand{\Bold}[1]{\mathbf{#1}}1</span></html>
+}}}
+
+<hr />
+<p><strong>Step 5:</strong> Then, the program finds the dot product of f and dS, also known as the magnitude(for step 3).</p>
+
+{{{id=15|
+integrand=np*f
+view(integrand)
+///
+<html><span class="math">\newcommand{\Bold}[1]{\mathbf{#1}}\sqrt{3}</span></html>
+}}}
+
+<hr />
+<p><strong>Step 6:</strong> This program computes the integral of the equation. <span style="color: #810541; font-family: Verdana, sans-serif; font-size: 14px; font-weight: bold;">This changes depending on your problem - we must input our intervals of integration here.</span></p>
+
+{{{id=26|
+integrand2=integral(integrand,(v,0,-u+1))
+view(integrand2)
+///
+<html><span class="math">\newcommand{\Bold}[1]{\mathbf{#1}}-{\left(u - 1\right)} \sqrt{3}</span></html>
+}}}
+
+{{{id=16|
+result=integral(integrand2,(u,0,1))
+view(result)
+///
+<html><span class="math">\newcommand{\Bold}[1]{\mathbf{#1}}\frac{1}{2} \, \sqrt{3}</span></html>
+}}}
+
+{{{id=21|
+n(result)
+///
+0.866025403784439
+}}}
+
+<hr /><hr />
+<p style="font-size: 1.1em; color: #008000;"><strong>Answer:</strong> The surface area of the triangle with vertices (1,0,0), (0,1,0) and (0,0,1) is: $<span>\frac{\sqrt{3}}{2} \approx 0.87$ &nbsp;</span></p>
+<p style="margin-left: 20px; color: #993333;">The triangle itself is an equilateral triangle with side length $a=\sqrt{2}$ so with area $A=\frac{\sqrt{3}}{4} \cdot a^2=\frac{\sqrt{3}}{2}$</p>
+<p style="margin-left: 20px; color: #993333;">So we expect the surface area to be $\iint_S\,{f(x,y,z)}\,dS=\iint_S{1}dS =1 \cdot \text{Area of Triangle}=\frac{\sqrt{3}}{2}$</p>
+
+{{{id=25|
+
+///
+}}}
