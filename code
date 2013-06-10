@@ -126,8 +126,8 @@ n(result)
 
 <hr /><hr />
 <p style="font-size: 1.1em; color: #008000;"><strong>Answer:</strong> The surface area of the triangle with vertices (1,0,0), (0,1,0) and (0,0,1) is: $<span>\frac{\sqrt{3}}{2} \approx 0.87$ &nbsp;</span></p>
-<p style="margin-left: 20px; color: #993333;">The triangle itself is an equilateral triangle with side length $a=\sqrt{2}$ so with area $A=\frac{\sqrt{3}}{4} \cdot a^2=\frac{\sqrt{3}}{2}$</p>
-<p style="margin-left: 20px; color: #993333;">So we expect the surface area to be $\iint_S\,{f(x,y,z)}\,dS=\iint_S{1}dS =1 \cdot \text{Area of Triangle}=\frac{\sqrt{3}}{2}$</p>
+<p style="margin-left: 20px; color: #993333;">The triangle is an equilateral triangle with side length $a=\sqrt{2}$ so it has area $A=\frac{\sqrt{3}}{4} \cdot a^2=\frac{\sqrt{3}}{2}$</p>
+<p style="margin-left: 20px; color: #993333;">So we expect the surface area will be $\iint_S\,{f(x,y,z)}\,dS=\iint_S{1}dS =1 \cdot \text{Area of Triangle}=\frac{\sqrt{3}}{2}$</p>
 
 {{{id=25|
 
