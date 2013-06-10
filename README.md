@@ -17,7 +17,7 @@ your bounds. Depending on the integral and bounds, you could get a completely di
 First the code asks you to parameterize your equation. If you don't have the correct parameters you won't get the right answer. After that the program will use your input function to find the partial derivatives, the vector product, and the magnitude. After that it will substitute your parameterizations in for f and find the integrand. Last it will find the intervals of integration by using the previously mentioned parametrization. After it calculates the integral it will output the answer. I included an example of this in the code. 
 
 Some other notes:
-I used the math class
-I used different fonts such as bold and italic
+I used the math class.
+I used different fonts such as bold and italic.
 I did use parts of code I found online when I got stuck. But most of this ended up changing anyways. 
 
