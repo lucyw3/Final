@@ -4,7 +4,7 @@ Final
 Calculate the surface integral(surface area).
 When I started this course, I did not have much knowledge on coding. Infact, the only coding course I had taken I failed. 
 I took this class to challenge myself and found the final project to be a great opprotunity to do so. 
-I wrote an algorithm for solving 2-variable integrals. While I wrote the code I made some small changes from examples i found online. I also set the colors to fit my personality. 
+I wrote an algorithm for solving 2-variable integrals. While I wrote the code I made some small changes from examples I found online. I also set the colors to fit my personality. 
 Here are a few things I realized when writing my code:
 
 1. A lot of coding depends on an input. For example in this code your entire answer depends on your integral as well as 
